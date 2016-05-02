@@ -1,0 +1,61 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; 
+;;;     1
+;;;    1 1
+;;;   1 0 1
+;;;  1 1 1 1
+;;; 1 1 1 1 1
+;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(define (problem PEGS-15-01-01)
+(:domain PEGS)
+(:objects hole1 hole2 hole3 hole4 hole5 hole6 hole7 hole8 hole9 hole10 hole11 hole12 hole13 hole14 hole15)
+(:init (not (empty hole1))
+	(not (empty hole2))
+	(not (empty hole3))
+	(not (empty hole4))
+	(empty hole5)
+	(not (empty hole6))
+	(not (empty hole7))
+	(not (empty hole8))
+	(not (empty hole9))
+	(not (empty hole10))
+	(not (empty hole11))
+	(not (empty hole12))
+	(not (empty hole13))
+	(not (empty hole14))
+	(not (empty hole15))
+	(jump hole1 hole2 hole4) (jump hole1 hole3 hole6)
+	(jump hole2 hole4 hole7) (jump hole2 hole5 hole9)
+	(jump hole3 hole5 hole8) (jump hole3 hole6 hole10)
+	(jump hole4 hole5 hole6) (jump hole4 hole2 hole1) (jump hole4 hole7 hole11) (jump hole4 hole8 hole13)
+	(jump hole5 hole8 hole12) (jump hole5 hole9 hole14)
+	(jump hole6 hole5 hole4) (jump hole6 hole3 hole1) (jump hole6 hole9 hole13) (jump hole6 hole10 hole15)
+	(jump hole7 hole4 hole2) (jump hole7 hole8 hole9)
+	(jump hole8 hole9 hole10) (jump hole8 hole5 hole3)
+	(jump hole9 hole8 hole7) (jump hole9 hole5 hole2)
+	(jump hole10 hole9 hole8) (jump hole10 hole6 hole3)
+	(jump hole11 hole7 hole4) (jump hole11 hole12 hole13)
+	(jump hole12 hole8 hole5) (jump hole12 hole13 hole14)
+	(jump hole13 hole12 hole11) (jump hole13 hole14 hole15) (jump hole13 hole8 hole4) (jump hole13 hole9 hole6)
+	(jump hole14 hole13 hole12) (jump hole14 hole9 hole5)
+	(jump hole15 hole14 hole13) (jump hole15 hole10 hole6)
+	)
+(:goal (AND
+		(empty hole1)
+		(empty hole2)
+		(empty hole3)
+		(empty hole4)
+		(empty hole5)
+		(empty hole6)
+		(empty hole7)
+		(empty hole8)
+		(empty hole9)
+		(empty hole10)
+		(empty hole11)
+		(empty hole12)
+		(not (empty hole13))
+		(empty hole14)
+		(empty hole15)
+		)))
